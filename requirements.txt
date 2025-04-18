@@ -1,44 +1,74 @@
+# ---------------------------------- #
+# -------- Web Framework ----------- #
+# ---------------------------------- #
+fastapi==0.110.0                 # Modern, fast web API framework
+uvicorn[standard]==0.29.0        # ASGI server for running FastAPI apps
 
 # ---------------------------------- #
-# ---------- Ui Framework ---------- #
+# -------- Database & ORM ---------- #
 # ---------------------------------- #
+sqlalchemy==2.0.29               # SQL ORM for database models and queries
+asyncpg==0.29.0                  # PostgreSQL driver for async DB connections
+psycopg2-binary==2.9.9           # PostgreSQL driver for sync DB connections
+alembic==1.13.1                  # Database migrations for SQLAlchemy
 
-flet==0.25.0        # A fast and interactive UI framework for building desktop, web, and mobile apps with Python.  
+# --------------------------------------------- #
+# --- Data Validation & Environment Settings -- #
+# --------------------------------------------- #
+pydantic==2.6.4                  # Data parsing & validation using Python type hints
+pydantic-settings==2.2.1         # Load and manage app settings via Pydantic
 
-# ----------------------------------- #
-# ------- backend & hashing --------- #
-# ----------------------------------- # 
+# ---------------------------------- #
+# ------ Authentication & Security - #
+# ---------------------------------- #
+passlib[bcrypt]==1.7.4           # Secure password hashing (supports bcrypt, argon2, etc.)
+bcrypt==4.1.2                    # Bcrypt implementation for hashing passwords
+python-jose[cryptography]==3.3.0 # JWT encoding/decoding and verification
+python-multipart==0.0.9          # Handle multipart/form-data uploads
+PyJWT==2.8.0                     # JWT-based token creation and decoding
 
-sqlalchemy==2.0.25  # A SQL toolkit and ORM for managing relational databases.  
-bcrypt==4.1.2       # Library for hashing and verifying passwords securely.  
-passlib==1.7.4      # Comprehensive password hashing framework supporting multiple algorithms.   
+# Firebase Authentication
+firebase-admin==6.5.0           # Firebase Admin SDK for verifying ID tokens
+google-auth==2.29.0             # Google Auth dependency for Firebase JWT handling
 
-# ----------------------------------- #
-# ----- printing & pdf generator----- #
-# ----------------------------------- #
+# ---------------------------------- #
+# --------- Email & SMTP ----------- #
+# ---------------------------------- #
+python-dotenv==1.0.1             # Load environment variables from .env file
+email-validator==2.1.1           # Validate, format, and normalize email addresses
+jinja2==3.1.3                    # HTML templating engine (used for rendering emails)
 
-reportlab==4.0.9    # Library for generating PDFs dynamically.  
+# ---------------------------------- #
+# ------------ Utilities ----------- #
+# ---------------------------------- #
+fastapi-utils==0.2.1             # Utilities for FastAPI: CBVs, pagination, etc.
+httpx==0.27.0                    # Async HTTP client for calling APIs
+requests==2.31.0                 # Sync HTTP client for calling external APIs
+loguru==0.7.2                    # Modern logging library
+python-slugify==8.0.4            # Slug generation from strings (used in URLs, filenames)
+ipython==8.24.0                  # Enhanced Python shell for debugging and development
 
+# ---------------------------------- #
+# ------ Linting & Formatting ------ #
+# ---------------------------------- #
+black==23.12.1                   # Opinionated Python code formatter
+isort==5.13.2                    # Sorts and organizes imports
+autopep8==2.3.2                  # Formats code to PEP8 style guide
+pylint==3.3.6                    # Static code analysis for Python
+flake8==7.1.2                    # Code style checker with plugin support
+mypy==1.15.0                     # Static type checker for Python
+bandit==1.7.7                    # Security linter for Python code
+radon==6.0.1                     # Code complexity and maintainability analyzer
 
-# ----------------------------------- #
-# ------- testing and debugging ----- #
-# ----------------------------------- #
+# ---------------------------------- #
+# ------- Optional Enhancements ---- #
+# ---------------------------------- #
+markdown==3.5.2                  # Render and manipulate markdown text
+itsdangerous==2.1.2              # Cryptographically sign data for tokens/links
 
-pytest==8.1.1       # Framework for writing and executing unit tests in Python.  
-pytest-flet==0.1.2  # Plugin for testing Flet applications with pytest.  
-pyautogui==0.9.54   # Automates GUI interactions (mouse, keyboard control, etc.).    
-openpyxl==3.1.2     # Library for reading and writing Excel files (XLSX).  
-
-# ----------------------------------- #
-# ----- linting and formatting ------ #
-# ----------------------------------- #
-
-black==3.12.8        # Automatic code formatting to PEP 8 standards.
-isort==5.13.2        # Sorting and organizing Python imports.
-autopep8==2.3.2      # Auto-format Python code to comply with PEP 8 style guide.
-pylint==3.3.6        # Static code analysis to check for errors and enforce coding standards.
-flake8==7.1.2        # Linting tool that checks for style issues, errors, and code complexity.
-mypy==1.15.0         # Static type checking for Python code with type annotations.
-bandit==3.12.8       # Security analysis tool for finding vulnerabilities in Python code.
-radon==6.0.1         # Analyzes code complexity and maintainability.
-python-dotenv==1.0.1 # loads environment variables from a .env file into the Python environment.
+# ---------------------------------- #
+# ---------- Testing Tools --------- #
+# ---------------------------------- #
+pytest==8.1.1                    # Testing framework for Python
+pytest-cov==5.0.0                # Test coverage reporting
+httpx[http2]==0.27.0             # HTTP2 testing support (can be used in API load testing)
